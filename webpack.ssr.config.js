@@ -2,7 +2,7 @@ const HtmlWebpackPlugin = require("html-webpack-plugin");
 const ManifestPlugin = require("webpack-manifest-plugin");
 const SWPrecacheWebpackPlugin = require("sw-precache-webpack-plugin");
 
-const config = require("react-scripts/config/webpack.config.prod");
+const config = require("./config/webpack.config.prod");
 
 config.entry = "./src/index.ssr.js";
 
