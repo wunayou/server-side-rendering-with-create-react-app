@@ -1,30 +1,31 @@
 import React from 'react'
 import Loadable from 'react-loadable';
-import { BrowserRouter as Router, Route, Link } from "react-router-dom";
-import aa from './a'
-import bb from './b'
-import cc from './c'
-import dd from './d'
-// const aa = Loadable({
-//     loader: () => import('./a'),
-//     loading: <div>loading...</div>,
-// })
-// const bb = Loadable({
-//     loader: () => import('./b'),
-//     loading: <div>loading...</div>,
-// })
-// const cc = Loadable({
-//     loader: () => import('./c'),
-//     loading: <div>loading...</div>,
-// })
-// const dd = Loadable({
-//     loader: () => import('./d'),
-//     loading: <div>loading...</div>,
-// })
+import { BrowserRouter, Route, Link } from "react-router-dom";
+import LoadingComponent from '../loading'  // 这原来也是需要一个组件 那一些写教程  只想说一句 操你妹。。。
 
-
+// https://blog.csdn.net/beijiyang999/article/details/78591398  这里体验真的好，因为还有一个延迟显示
+// import aa from './a'
+// import bb from './b'
+// import cc from './c'
+// import dd from './d'
+const aa = Loadable({
+    loader: () => import('./a'),
+    loading: LoadingComponent,
+})
+const bb = Loadable({
+    loader: () => import('./b'),
+    loading: LoadingComponent,
+})
+const cc = Loadable({
+    loader: () => import('./c'),
+    loading: LoadingComponent,
+})
+const dd = Loadable({
+    loader: () => import('./d'),
+    loading: LoadingComponent,
+})
 const BasicExample = () => (
-    <Router>
+    <BrowserRouter>
       <div>
         <ul>
           <li>
@@ -37,7 +38,7 @@ const BasicExample = () => (
             <Link to="/cc">Topics</Link>
           </li>
           <li>
-            <Link to="/dd">Topics</Link>
+            <Link to="/dd">dddd</Link>
           </li>
         </ul>
   
@@ -47,7 +48,7 @@ const BasicExample = () => (
         <Route path="/cc" component={cc} />
         <Route path="/dd" component={dd} />
       </div>
-    </Router>
+    </BrowserRouter>
   );
 
   export default BasicExample;

@@ -4,6 +4,7 @@ const router = require("express").Router();
 
 const { renderToNodeStream } = require("react-dom/server");
 const React = require("react");
+const StaticRouter = require('react-router-dom')
 const ReactApp = require("../build/static/ssr/main").default;
 
 console.log(ReactApp)
